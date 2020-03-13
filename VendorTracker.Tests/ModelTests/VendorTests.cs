@@ -6,8 +6,12 @@ using System;
 namespace VendorTracker.TestTools
 {
   [TestClass]
-  public class VendorTest
+  public class VendorTest : IDisposable
   {
+     public void Dispose()
+    {
+      Vendor.ClearAll();
+    }
 
     [TestMethod]
     public void VendorConstructor_CreatesInstanceofVendor_Vendor()
